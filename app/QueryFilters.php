@@ -42,7 +42,7 @@ abstract class QueryFilters
         $this->builder = $builder;
 
         foreach ($this->filters() as $name => $value) {
-            if (! method_exists($this, $name)) {
+            if (! method_exists($this, $name) || empty($value)) {
                 continue;
             }
 
